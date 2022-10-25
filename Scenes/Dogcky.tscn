@@ -1,0 +1,178 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/slime.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends KinematicBody2D
+
+
+const VALOR_DE_VELOCIDAD = 15
+const VELOCIDAD_MAXIMA   = 150
+const GRAVITY = 10
+const MAX_JUMPS = 1
+var velocity = Vector2(0,-1)
+onready var sprite = $Sprite
+onready var animationPlayer = $AnimationPlayer
+var jumps = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	if is_on_floor() and jumps == 1:
+		jumps = 0
+		velocity.y = 0
+		animationPlayer.play(\"aplastado\")
+
+	else:
+		velocity.y += GRAVITY
+		
+	if Input.is_action_just_pressed(\"ui_accept\") and jumps < MAX_JUMPS:
+		jumps += 1
+		velocity.y = -20 * VALOR_DE_VELOCIDAD
+		animationPlayer.play(\"saltar\")
+
+	
+
+	if Input.is_action_just_pressed(\"ui_left\"):
+		velocity.x = -VELOCIDAD_MAXIMA
+		animationPlayer.play(\"caminar\")
+		$Sprite.flip_h = false
+		
+
+	if Input.is_action_just_pressed(\"ui_right\"):
+		velocity.x = VELOCIDAD_MAXIMA
+		animationPlayer.play(\"caminar\")
+		$Sprite.flip_h = true
+
+	if Input.is_action_just_pressed(\"ui_down\"):
+		animationPlayer.play(\"agachado\")
+	if Input.is_action_just_released(\"ui_left\") or Input.is_action_just_released(\"ui_right\") or Input.is_action_just_released(\"ui_down\"):
+		velocity.x = 0
+		animationPlayer.play(\"quieto\")
+
+
+
+	move_and_slide(velocity,Vector2.UP)
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "agachado"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "aplastado"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "caminar"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 2 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "quieto"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "saltar"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 0 ]
+}
+
+[node name="Dogcky" type="KinematicBody2D"]
+script = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 5
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/agachado = SubResource( 12 )
+anims/aplastado = SubResource( 10 )
+anims/caminar = SubResource( 8 )
+anims/quieto = SubResource( 9 )
+anims/saltar = SubResource( 11 )
