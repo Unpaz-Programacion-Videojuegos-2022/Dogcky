@@ -165,6 +165,7 @@ script = SubResource( 6 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 hframes = 5
 vframes = 2

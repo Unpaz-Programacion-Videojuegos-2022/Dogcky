@@ -18,4 +18,4 @@ position = Vector2( 300.5, 0 )
 shape = SubResource( 1 )
 
 [node name="Dogcky" parent="." instance=ExtResource( 1 )]
-position = Vector2( 27, 283 )
+position = Vector2( 65, 259 )
