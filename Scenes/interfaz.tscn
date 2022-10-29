@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Recursos/FuenteMenu.tres" type="DynamicFont" id=1]
+
+[node name="interfaz" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Vidas" type="RichTextLabel" parent="."]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 174.0
+margin_bottom = 48.0
+custom_colors/default_color = Color( 0.588235, 0.0627451, 0.913725, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+visible_characters = 10
+percent_visible = 2.0
+tab_size = 6
+text = " vidas: 3"
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Puntaje" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -34.0
+margin_top = 3.0
+margin_right = 278.0
+margin_bottom = 43.0
+custom_colors/default_color = Color( 0.32549, 0.968627, 0.145098, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+visible_characters = 12
+text = "puntaje:0000"
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Nivel" type="RichTextLabel" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -249.0
+margin_top = -58.0
+custom_colors/default_color = Color( 0.941176, 0.917647, 0.917647, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+visible_characters = 15
+percent_visible = 1.07143
+text = "  nivel: Jaula"
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="cacas" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -51.0
+margin_right = 191.0
+margin_bottom = -11.0
+custom_colors/default_color = Color( 0.603922, 0.454902, 0.137255, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+visible_characters = 10
+percent_visible = 1.25
+text = "Cacas: 3"
+scroll_active = false

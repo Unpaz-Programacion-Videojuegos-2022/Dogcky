@@ -86,5 +86,7 @@ custom_fonts/font = SubResource( 3 )
 text = "Salir"
 flat = true
 
+[connection signal="pressed" from="VBoxBotones/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="VBoxBotones/Tutorial" to="." method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="VBoxBotones/Creditos" to="." method="_on_Creditos_pressed"]
 [connection signal="pressed" from="VBoxBotones/Salir" to="." method="_on_Salir_pressed"]
