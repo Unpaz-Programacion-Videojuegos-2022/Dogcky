@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/Dogcky.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Dogcky/Dogcky.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/108-1088393_mario-bros-clipart-mario-pipe-super-mario-pipe.png" type="Texture" id=2]
 [ext_resource path="res://Assets/sangre-fondo-pared-blanca-fondo-terror-fondo-pared-sucia-manchada-sangre_553949-2656.jpg" type="Texture" id=3]
-[ext_resource path="res://Scenes/prueba de movimiento.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Nivel prueba/prueba de movimiento.gd" type="Script" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
