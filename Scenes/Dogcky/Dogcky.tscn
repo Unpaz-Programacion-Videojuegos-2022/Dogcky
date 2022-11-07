@@ -5,7 +5,7 @@
 [sub_resource type="GDScript" id=6]
 script/source = "extends KinematicBody2D
 
-
+var poop = preload(\"res://Scenes/objetos/poop.tscn\")
 const VALOR_DE_VELOCIDAD = 15
 const VELOCIDAD_MAXIMA   = 150
 const GRAVITY = 10
@@ -19,7 +19,15 @@ var jumps = 0
 func _ready():
 	pass # Replace with function body.
 
-
+func _generate_poop():
+	var instancia_poop = poop.instance()
+	add_child(instancia_poop)
+	
+	pass
+func _Poop():
+	if Input.is_action_just_pressed(\"ui_down\"):
+		_generate_poop()
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if is_on_floor() and jumps == 1:
@@ -70,6 +78,10 @@ func _physics_process(delta):
 		global_position.y = maximo.y + 5
 	elif(global_position.y < minimo.y):
 		global_position.y = minimo.y - 5
+
+
+
+
 "
 
 [sub_resource type="RectangleShape2D" id=1]
