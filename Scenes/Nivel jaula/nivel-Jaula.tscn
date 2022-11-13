@@ -1,3 +1,9 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/sangre-fondo-pared-blanca-fondo-terror-fondo-pared-sucia-manchada-sangre_553949-2656.jpg" type="Texture" id=1]
 
 [node name="nivel-Jaula" type="Node2D"]
+
+[node name="Sangre-fondo-pared-blanca-fondo-terror-fondo-pared-sucia-manchada-sangre553949-2656" type="Sprite" parent="."]
+position = Vector2( 497, 308 )
+texture = ExtResource( 1 )

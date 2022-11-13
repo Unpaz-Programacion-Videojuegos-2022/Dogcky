@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/cachorrito/Cachorrito 1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/cachorrito/Cachorrito 3.png" type="Texture" id=2]
+[ext_resource path="res://Assets/cachorrito/Cachorrito 2.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/cachorritos/Cachorrito.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 11.75 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "atrapado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "movimiento",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "quieto",
+"speed": 5.0
+} ]
+
+[node name="cachorrito" type="KinematicBody2D"]
+position = Vector2( 0, 1 )
+collision_layer = 16
+collision_mask = 5
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2.75 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.52588e-05, 3 )
+scale = Vector2( 0.0641153, 0.0667157 )
+frames = SubResource( 2 )
+animation = "movimiento"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="floorDeteccion" type="RayCast2D" parent="Sprite"]
+position = Vector2( 249.55, 2.67029e-05 )
+scale = Vector2( 15.5969, 14.989 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 13
+
+[node name="leftray" type="RayCast2D" parent="."]
+position = Vector2( 1, 2 )
+enabled = true
+cast_to = Vector2( -25, 0 )
+collision_mask = 4
+
+[node name="rightray" type="RayCast2D" parent="."]
+position = Vector2( 0, 3 )
+enabled = true
+cast_to = Vector2( 25, 0 )
+collision_mask = 8
