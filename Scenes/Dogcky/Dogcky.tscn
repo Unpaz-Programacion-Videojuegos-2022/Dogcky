@@ -79,7 +79,10 @@ func _physics_process(delta):
 		global_position.y = minimo.y - 5
 
 
-
+	if(get_slide_collision(get_slide_count()-1) != null):
+		var colisionador = get_slide_collision(get_slide_count()-1).collider
+		if(colisionador.is_in_group(\"enemigo\")):
+			get_tree().change_scene(\"res://Scenes/fin del juego por perder/game over.tscn\")
 
 "
 
@@ -104,7 +107,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31, 18.5 )
 
-[node name="Dogcky" type="KinematicBody2D"]
+[node name="Dogcky" type="KinematicBody2D" groups=["player"]]
 input_pickable = true
 script = SubResource( 6 )
 
@@ -112,7 +115,7 @@ script = SubResource( 6 )
 position = Vector2( -7.125, 10.75 )
 scale = Vector2( 0.123757, 0.11375 )
 frames = SubResource( 7 )
-animation = "caminar"
+animation = "quieto"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -7, 14.5 )

@@ -182,12 +182,6 @@ texture = ExtResource( 3 )
 position = Vector2( 680, 542 )
 collision_mask = 6
 
-[node name="Camera2D" type="Camera2D" parent="Dogcky"]
-position = Vector2( 1, 6 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
-smoothing_enabled = true
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )

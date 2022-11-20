@@ -21,9 +21,13 @@ func _flip():
 	if _next_to_left_Wall() or _next_to_right_Wall() or  !_floor_deteccion():
 		motion.x *= -1
 		$AnimatedSprite.scale.x *= -1
-func _process(delta):
+
+func _physics_process(delta):
 	motion.y += GRAVITY
 	_flip()
 	
 	motion = move_and_slide(motion)
+	
+	
 	pass
+
