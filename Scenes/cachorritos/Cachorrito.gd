@@ -6,6 +6,8 @@ const GRAVITY : float = 25.0
 var motion := Vector2()
 func _ready():
 	motion.x = MAX_SPEED
+	
+	
 	pass 
 
 func _next_to_left_Wall() -> bool:
@@ -26,4 +28,14 @@ func _process(delta):
 	_flip()
 	
 	motion = move_and_slide(motion)
+	
+	
+	
+	if(get_slide_collision(get_slide_count()-1) != null):
+		var colisionador = get_slide_collision(get_slide_count()-1).collider
+		if(colisionador.is_in_group("player")):
+			queue_free()
 	pass
+
+func delete():
+	queue_free()

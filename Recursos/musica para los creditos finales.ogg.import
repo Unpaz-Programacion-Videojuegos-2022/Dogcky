@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/musica para los creditos finales.ogg-daa0d605fc469b477f01fed52985207f.oggstr"
+
+[deps]
+
+source_file="res://Recursos/musica para los creditos finales.ogg"
+dest_files=[ "res://.import/musica para los creditos finales.ogg-daa0d605fc469b477f01fed52985207f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/musica de fondo para el menui.ogg-8bd102e205a89413855b7b841c93de0d.oggstr"
+
+[deps]
+
+source_file="res://Recursos/musica de fondo para el menui.ogg"
+dest_files=[ "res://.import/musica de fondo para el menui.ogg-8bd102e205a89413855b7b841c93de0d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

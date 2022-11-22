@@ -9,7 +9,7 @@ func _on_Tutorial_pressed():
 
 func _on_Jugar_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Nivel prueba/prueba de movimiento.tscn")
+	get_tree().change_scene("res://Scenes/Nivel jaula/nivel-Jaula.tscn")
 	pass # Replace with function body.
 	
 func _on_Creditos_pressed():

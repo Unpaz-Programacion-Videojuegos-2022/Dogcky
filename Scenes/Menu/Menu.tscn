@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Recursos/kenney-pixel.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Recursos/FuenteMenu.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/Fondo paralax/ParallaxBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Menu/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Logo/logo1-removebg-preview.png" type="Texture" id=5]
+[ext_resource path="res://Recursos/musica de fondo para el menui.ogg" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -38,18 +40,21 @@ script = ExtResource( 4 )
 
 [node name="VBoxBotones" type="VBoxContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -113.0
-margin_top = -179.0
-margin_right = 113.0
-margin_bottom = 179.0
-custom_constants/separation = 50
+margin_left = -150.0
+margin_right = 150.0
+margin_bottom = 610.0
+custom_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="VBoxBotones"]
+margin_right = 300.0
+margin_bottom = 202.0
+texture = ExtResource( 5 )
 
 [node name="Jugar" type="Button" parent="VBoxBotones"]
-margin_right = 226.0
-margin_bottom = 52.0
+margin_top = 242.0
+margin_right = 300.0
+margin_bottom = 294.0
 custom_colors/font_color_hover = Color( 0.976471, 0.0431373, 0.0431373, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
@@ -57,9 +62,9 @@ text = "Jugar"
 flat = true
 
 [node name="Tutorial" type="Button" parent="VBoxBotones"]
-margin_top = 102.0
-margin_right = 226.0
-margin_bottom = 154.0
+margin_top = 334.0
+margin_right = 300.0
+margin_bottom = 386.0
 custom_colors/font_color_hover = Color( 0.945098, 0.0470588, 0.0470588, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -67,9 +72,9 @@ text = "Tutorial"
 flat = true
 
 [node name="Creditos" type="Button" parent="VBoxBotones"]
-margin_top = 204.0
-margin_right = 226.0
-margin_bottom = 256.0
+margin_top = 426.0
+margin_right = 300.0
+margin_bottom = 478.0
 custom_colors/font_color_hover = Color( 0.980392, 0.0392157, 0.0392157, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
@@ -77,14 +82,18 @@ text = "Creditos"
 flat = true
 
 [node name="Salir" type="Button" parent="VBoxBotones"]
-margin_top = 306.0
-margin_right = 226.0
-margin_bottom = 358.0
+margin_top = 518.0
+margin_right = 300.0
+margin_bottom = 570.0
 custom_colors/font_color_hover = Color( 0.952941, 0.0431373, 0.0431373, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Salir"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="pressed" from="VBoxBotones/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="VBoxBotones/Tutorial" to="." method="_on_Tutorial_pressed"]
