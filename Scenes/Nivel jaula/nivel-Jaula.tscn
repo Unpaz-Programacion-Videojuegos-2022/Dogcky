@@ -243,8 +243,7 @@ collision_mask = 5
 [node name="Elda3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 808, 95 )
 
-[node name="puerta" parent="." instance=ExtResource( 9 )]
-visible = true
+[node name="puerta" parent="." groups=["A", "puerta"] instance=ExtResource( 9 )]
 position = Vector2( 36, 553 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -256,5 +255,11 @@ position = Vector2( 102, 197 )
 
 [node name="cachorrito2" parent="." groups=["C"] instance=ExtResource( 6 )]
 position = Vector2( 724, 200 )
+
+[node name="cachorrito3" parent="." groups=["D"] instance=ExtResource( 6 )]
+position = Vector2( 692, 366 )
+
+[node name="cachorrito4" parent="." groups=["E"] instance=ExtResource( 6 )]
+position = Vector2( 198, 462 )
 
 [editable path="puerta"]

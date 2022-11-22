@@ -81,6 +81,10 @@ func _physics_process(delta):
 	if(get_slide_collision(get_slide_count()-1) != null):
 		var colisionador = get_slide_collision(get_slide_count()-1).collider
 		if(colisionador.is_in_group("puerta")):
+			get_tree().change_scene("res://Scenes/Nivel prueba/prueba de movimiento.tscn")
+	if(get_slide_collision(get_slide_count()-1) != null):
+		var colisionador = get_slide_collision(get_slide_count()-1).collider
+		if(colisionador.is_in_group("puerta2")):
 			get_tree().change_scene("res://Scenes/final/Final.tscn")
 	
 	if(get_slide_collision(get_slide_count()-1) != null):
@@ -95,3 +99,11 @@ func _physics_process(delta):
 		var colisionador = get_slide_collision(get_slide_count()-1).collider
 		if(colisionador.is_in_group("C")):
 			get_tree().call_group("C","delete")
+	if(get_slide_collision(get_slide_count()-1) != null):
+		var colisionador = get_slide_collision(get_slide_count()-1).collider
+		if(colisionador.is_in_group("D")):
+			get_tree().call_group("D","delete")
+	if(get_slide_collision(get_slide_count()-1) != null):
+		var colisionador = get_slide_collision(get_slide_count()-1).collider
+		if(colisionador.is_in_group("E")):
+			get_tree().call_group("E","delete")
