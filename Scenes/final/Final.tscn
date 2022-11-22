@@ -17,6 +17,7 @@ texture = ExtResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = 10.891
 autoplay = true
 
 [node name="inicio" type="Button" parent="."]
@@ -42,6 +43,15 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "salir"
 flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 521.0
+margin_top = 122.0
+margin_right = 874.0
+margin_bottom = 375.0
+custom_colors/default_color = Color( 0.819608, 0.878431, 0.054902, 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Dogcky: y asi fue como ganamos esta pequeña lucha contra los humanos"
 
 [connection signal="pressed" from="inicio" to="." method="_on_inicio_pressed"]
 [connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]

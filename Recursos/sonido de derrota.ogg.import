@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sonido de derrota.ogg-c81b08da498e80eb51b3dddbb06666d8.oggstr"
+
+[deps]
+
+source_file="res://Recursos/sonido de derrota.ogg"
+dest_files=[ "res://.import/sonido de derrota.ogg-c81b08da498e80eb51b3dddbb06666d8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
