@@ -44,7 +44,7 @@ custom_colors/default_color = Color( 0.921569, 0.917647, 0.0745098, 1 )
 custom_fonts/normal_font = ExtResource( 1 )
 visible_characters = 1000
 text = "para mover el jugador utilize las flechas de movimiento izquierda y derecha, para saltar utilize la barra espaciadora.
-eso es todo por ahora cuando tengamos nuevos comandos se modificaran"
+primero se deben rescatar los cachorritos que corren por ultimo el cachorrito que esta llorando una vez hecho esto dirigirse a la puerta."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
